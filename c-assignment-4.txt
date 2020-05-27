@@ -1,0 +1,55 @@
+#include<studio.h>
+
+#include<conio.h>
+
+void main()
+
+{
+
+FILE*fp;
+
+int a[20],i,s=0,n,max;
+
+double avg;
+
+fp=fopen("file","w");
+
+printf("\nenter the elements\n");
+
+scanf("%d",&n);
+
+printf("\n enter the values into the file");
+
+for(i=0;i<n;i++)
+
+scanf("%d",a[i]);
+
+fp=fopen("file","r");
+
+for(i=0;i<n;i++)
+
+{
+
+s=s+a[i];
+
+}
+
+avg=s/n;
+
+printf("average numbers in array is %ld\n",avg);
+
+for(i=0;i<n;i++)
+
+{
+
+if(a[0]<a[i])
+
+a[0]=a[i];
+
+}
+
+printf(\n"the max number of array is %d\n",a[0]);
+
+fclose;
+
+}

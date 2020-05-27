@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<conio.h>
+enum dept{HR,Sales,Research,Software,Executive};
+struct emp
+{
+	enum dept d;
+	struct sal
+	{
+		int basic;
+		int hr;
+		int da;
+		int gross;
+	}s;
+	unsigned ssn;
+};
+void main()
+{
+	struct emp e[10];
+	int i;
+	clrscr();
+	for(i=1;i<=10;i++)
+	{
+		e[i].d=HR;
+		printf(n Enter the SSN number for %d employee,i);
+		scanf(%ud,&e[i].ssn);
+		printf(n Enter the basic HR DA salary for %d employee in %d dept,i,e[i].d);
+		scanf(%d %d %d,&e[i].s.basic,&e[i].s.hr,&e[i].s.da);
+	}
+	for(i=1;i<=10;i++){
+		e[i].s.gross=e[i].s.basic + e[i].s.hr + e[i].s.da;
+		printf(Employee Details);
+		printf(n);
+		printf(nEmp SSN Emp Depart. Basic t HR t DA t Gross);
+		printf(n);
+		for(i=1;i<=10;i++)
+		{
+			printf(n%utt%dt%dt%dt%dt%d,e[i].ssn,e[i].d,e[i].s.basic,e[i].s.hr,e[i].s.da,e[i].s.gross);
+		}
+	}
+	getch();
+
+}
